@@ -3,6 +3,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 
+import static java.lang.Thread.sleep;
+
 public class Main {
     public static void main(String[] args) {
         // 内存缓冲区,长度为3
@@ -32,14 +34,11 @@ public class Main {
 //        cachePool.execute(c3);
 //        cachePool.execute(c4);
 
+        // 模拟停止线程
         try {
-            Thread.sleep(10000);
+            sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-        p1.stop();
-        p2.stop();
-        p3.stop();
     }
 }

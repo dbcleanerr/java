@@ -37,8 +37,8 @@ public class Provider implements Runnable {
                         ", 进行装载到公共缓冲区中...");
 
                 // 加入队列
-//                if (!this.queue.offer(data, 2, TimeUnit.SECONDS)) {
-                if (!this.queue.offer(data)) {
+                if (!this.queue.offer(data, 2, TimeUnit.SECONDS)) {
+//                if (!this.queue.offer(data)) {
                     System.out.println("提交队列失败....");
                     // 异常处理，比如重新提交
                 }
